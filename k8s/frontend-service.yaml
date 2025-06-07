@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 80         # expose service on port 80 internally
+      targetPort: 80   # forward to container's port 80
+  type: ClusterIP
+
+
