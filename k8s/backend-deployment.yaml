@@ -1,9 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deployment
-  labels:
-    app: backend
+  name: backend
 spec:
   replicas: 1
   selector:
@@ -15,8 +13,7 @@ spec:
         app: backend
     spec:
       containers:
-      - name: backend-container
-        image: backend-image-name:latest
-        ports:
-        - containerPort: 3000
-        imagePullPolicy: IfNotPresent
+        - name: backend
+          image: Runyora3/backend:latest
+          ports:
+            - containerPort: 3000

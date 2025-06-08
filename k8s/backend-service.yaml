@@ -6,5 +6,9 @@ spec:
   selector:
     app: backend
   ports:
-    - port: 80
-      targetPort: 3000
+    - protocol: TCP
+      port: 5000        # service port
+      targetPort: 3000  # container port your app listens on
+      nodePort: 30001   # optional: fixed port, or leave blank to auto-assign
+  type: NodePort
+
